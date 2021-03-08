@@ -37,6 +37,8 @@ public:
 
     bool overlay_visible() const;
 
+    bool is_excluded_app(wchar_t* exePath);
+
 private:
     std::wstring app_name;
     //contains the non localized key of the powertoy
@@ -46,9 +48,11 @@ private:
     bool _enabled = false;
     HHOOK hook_handle;
     std::unique_ptr<NativeEventWaiter> event_waiter;
+    std::vector<std::wstring> excluded_apps_array;
 
     void init_settings();
     void disable(bool trace_event);
+    void update_excluded_apps();
 
     struct PressTime
     {
@@ -75,4 +79,10 @@ private:
             { L"dark", IDS_SETTING_DESCRIPTION_THEME_DARK }
         };
     } theme;
+
+    struct ExcludedApps
+    {
+        PCWSTR name = L"excluded_apps";
+        std::wstring value = L"";
+    } excludedApps;
 };

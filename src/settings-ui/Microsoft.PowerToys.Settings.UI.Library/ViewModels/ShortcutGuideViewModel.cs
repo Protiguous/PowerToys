@@ -20,6 +20,7 @@ namespace Microsoft.PowerToys.Settings.UI.Library.ViewModels
         private Func<string, int> SendConfigMSG { get; }
 
         private string _settingsConfigFileFolder = string.Empty;
+        private string _excludedApps;
 
         public ShortcutGuideViewModel(ISettingsRepository<GeneralSettings> settingsRepository, ISettingsRepository<ShortcutGuideSettings> moduleSettingsRepository, Func<string, int> ipcMSGCallBackFunc, string configFileSubfolder = "")
         {
@@ -49,6 +50,7 @@ namespace Microsoft.PowerToys.Settings.UI.Library.ViewModels
             _isEnabled = GeneralSettingsConfig.Enabled.ShortcutGuide;
             _pressTime = Settings.Properties.PressTime.Value;
             _opacity = Settings.Properties.OverlayOpacity.Value;
+            _excludedApps = Settings.Properties.ExcludedApps.Value;
 
             string theme = Settings.Properties.Theme.Value;
 
@@ -165,6 +167,24 @@ namespace Microsoft.PowerToys.Settings.UI.Library.ViewModels
                 {
                     _opacity = value;
                     Settings.Properties.OverlayOpacity.Value = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public string ExcludedApps
+        {
+            get
+            {
+                return _excludedApps;
+            }
+
+            set
+            {
+                if (value != _excludedApps)
+                {
+                    _excludedApps = value;
+                    Settings.Properties.ExcludedApps.Value = value;
                     NotifyPropertyChanged();
                 }
             }

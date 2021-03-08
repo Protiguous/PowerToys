@@ -13,6 +13,7 @@ namespace Microsoft.PowerToys.Settings.UI.Library
             OverlayOpacity = new IntProperty(90);
             PressTime = new IntProperty(900);
             Theme = new StringProperty("system");
+            ExcludedApps = new StringProperty();
         }
 
         [JsonPropertyName("overlay_opacity")]
@@ -23,5 +24,8 @@ namespace Microsoft.PowerToys.Settings.UI.Library
 
         [JsonPropertyName("theme")]
         public StringProperty Theme { get; set; }
+
+        [JsonPropertyName("excluded_apps")]
+        public StringProperty ExcludedApps { get; set; }
     }
 }

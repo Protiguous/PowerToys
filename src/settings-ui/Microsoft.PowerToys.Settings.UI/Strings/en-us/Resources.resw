@@ -491,6 +491,12 @@
   <data name="ShortcutGuide_OverlayOpacity.Header" xml:space="preserve">
     <value>Opacity of background</value>
   </data>
+  <data name="ShortcutGuide_ExcludedApps.Text" xml:space="preserve">
+    <value>Excluded apps</value>
+  </data>
+  <data name="ShortcutGuide_ExcludedApps_TextBoxControl.Header" xml:space="preserve">
+    <value>To exclude an application add its name here (one per line).</value>
+  </data>
   <data name="ImageResizer_CustomSizes.Text" xml:space="preserve">
     <value>Image sizes</value>
   </data>

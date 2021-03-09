@@ -495,7 +495,10 @@
     <value>Excluded apps</value>
   </data>
   <data name="ShortcutGuide_ExcludedApps_TextBoxControl.Header" xml:space="preserve">
-    <value>To exclude an application add its name here (one per line).</value>
+    <value>To exclude an application add its name here (one per line). Shortcut Guide won't react to Windows key for these apps.</value>
+  </data>
+  <data name="ShortcutGuide_ExcludedApps_TextBoxControl.PlaceholderText" xml:space="preserve">
+    <value>Example: outlook.exe</value>
   </data>
   <data name="ImageResizer_CustomSizes.Text" xml:space="preserve">
     <value>Image sizes</value>
